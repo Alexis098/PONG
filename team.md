@@ -1,6 +1,6 @@
 | Prénom              | NOM              | GitHub                                                        | Pong                                        |
 | ------------------- |----------------  | ------------------------------------------------------------- | --------------------------------------------------------- |
-| Alexis              | HENG             | [Alexis098](https://github.com/Alexis098)                     |      |
+| Alexis              | HENG             | [Alexis098](https://github.com/Alexis098)                     | https://alexis098.github.io/PONG/index.html    |
 | Anaïs               | BISCARAS         | [Loulaty](https://github.com/Loulaty)                         | |
 | Anatole             | PAGNUCCO         | [anatole-P](https://github.com/anatole-P)                     | |
 | Andréa              | MICHEL           | [ilyord](https://github.com/ilyord)                           |             |
