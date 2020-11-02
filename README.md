@@ -1,2 +1,2 @@
 # PONG
-https://alexis098.github.io/PONG/index.html
+https://alexis098.github.io/pong/index.html
