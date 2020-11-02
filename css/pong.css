@@ -1,0 +1,23 @@
+body{
+    background-color: #000;
+    color: #fff;
+    font-family: monospace;
+}
+
+#terrain{
+    position : relative;
+    border:1px solid white; /** solid permet de faire apparaitre la borude est ne serait que fictive sinon **/
+    width : 800px;
+    height: 400px;
+}
+
+#balle{
+    position : absolute;
+    top: 50%; /** place la balle au centre du terrain avec top et left c'est possible car la div balle est dans la div terrain **/
+    left:50%;
+
+    width: 20px;
+    height:20px;
+    background-color: white;
+    border-radius:100%;
+}
