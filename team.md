@@ -1,4 +1,4 @@
-| Prénom              | NOM              | GitHub                                                        | Unserious Game                                            |
+| Prénom              | NOM              | GitHub                                                        | Pong                                        |
 | ------------------- |----------------  | ------------------------------------------------------------- | --------------------------------------------------------- |
 | Alexis              | HENG             | [Alexis098](https://github.com/Alexis098)                     |      |
 | Anaïs               | BISCARAS         | [Loulaty](https://github.com/Loulaty)                         | |
