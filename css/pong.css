@@ -1,23 +1,23 @@
 body{
-    background-color: #000;
-    color: #fff;
-    font-family: monospace;
+    background-color: #000; /** la couleur de la page est noire **/
+    color: #fff; /** la couleur de la div terrain est blanche **/
+    font-family: monospace; /** police monospace appliquée au texte contenu dans le body **/
 }
 
 #terrain{
     position : relative;
     border:1px solid white; /** solid permet de faire apparaitre la borude est ne serait que fictive sinon **/
-    width : 800px;
-    height: 400px;
+    width : 800px; /** largeur du terrain **/
+    height: 400px; /** hauteur du terrain **/
 }
 
 #balle{
     position : absolute;
-    top: 50%; /** place la balle au centre du terrain avec top et left c'est possible car la div balle est dans la div terrain **/
+    top: 50%; /** place la balle au centre du terrain avec top et left; c'est possible car la div balle est dans la div terrain **/
     left:50%;
 
-    width: 20px;
-    height:20px;
-    background-color: white;
-    border-radius:100%;
+    width: 20px; /** largeur du carré **/
+    height:20px; /** hauteur du carré **/
+    background-color: white; /** couleur de fond de la balle **/
+    border-radius:100%; /** permet d'arrondir les angles du carré pour avoir une balle parfaitement ronde **/
 }
