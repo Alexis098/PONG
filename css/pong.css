@@ -2,6 +2,14 @@ body{
     background-color: #000; /** la couleur de la page est noire **/
     color: #fff; /** la couleur de la div terrain est blanche **/
     font-family: monospace; /** police monospace appliquée au texte contenu dans le body **/
+
+    /** permet de centrer les éléments dans la page **/
+    display: flex; 
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 #terrain{
