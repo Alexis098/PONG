@@ -62,4 +62,4 @@ setInterval(function(){ //cette fonction permet de déplacer la balle
     balle.majHTML();
 }, 10);
 
-// on fait des classes et on déclare les variables dedans pour ensuite les utiliser dans les bouces if,
+// on fait des classes et on déclare les variables dedans pour ensuite les utiliser dans les bouces if
