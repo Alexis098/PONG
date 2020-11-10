@@ -14,10 +14,16 @@ body{
 
 #terrain{
     position : relative;
-    border:1px solid white; /** solid permet de faire apparaitre la borude est ne serait que fictive sinon **/
+    border: 1px solid #000; /** solid permet de faire apparaitre la bordure qui ne serait que fictive sinon, soit, invisible **/
+    border-top-color: #fff; /** le bord supérieur du terrain devient blanc **/
+    border-bottom-color: #fff; /** le bord inéfrieur du terrain devient blanc **/
     width : 800px; /** largeur du terrain **/
     height: 400px; /** hauteur du terrain **/
+
 }
+
+
+
 
 #balle{
     position : absolute;
