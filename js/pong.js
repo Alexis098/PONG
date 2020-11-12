@@ -116,14 +116,14 @@ setInterval(function(){ //cette fonction permet de déplacer la balle
     }
 
     // la raquette droite rebondit lorsqu'elle touche le bas du terrain
-    if(raquetteD.haut>terrain.hauteur-2*raquetteD.hauteur){
-        raquetteD.haut=terrain.hauteur-2*raquetteD.hauteur;
+    if(raquetteD.haut>terrain.hauteur-raquetteD.hauteur){
+        raquetteD.haut=terrain.hauteur-raquetteD.hauteur;
         raquetteD.vitesse=raquetteD.vitesse*-1;
     }
 
     // la raquette droite rebondit lorsqu'elle touche le haut du terrain
-    if(raquetteD.haut<0-raquetteD.hauteur){
-        raquetteD.haut=0-raquetteD.hauteur;
+    if(raquetteD.haut<0){
+        raquetteD.haut=0;
         raquetteD.vitesse=raquetteD.vitesse*-1;
     }
     
