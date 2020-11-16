@@ -36,20 +36,18 @@ body{
     border-radius:100%; /** permet d'arrondir les angles du carré pour avoir une balle parfaitement ronde **/
 }
 
-#raquetteG{
+.raquette{
     position : absolute;
-    top:10%;
-    left : 10%;
+    background-color : white;
     width : 10px;
     height : 100px;
-    background-color : white;
+    top:10%;
+}
+
+#raquetteG{
+    left : 10%;
 }
 
 #raquetteD{
-    position : absolute;
-    top:80%;
-    left : 90%;
-    width : 10px;
-    height : 100px;
-    background-color : white;
+    right : 10%;
 }
