@@ -8,6 +8,7 @@
 // Jquerry perme de faire le lien entre html/css et le fichier js 
 
 
+
 setInterval(function(){ //cette fonction permet de déplacer la balle  
   balle.bouge();
   raquetteG.bouge();
@@ -17,19 +18,21 @@ setInterval(function(){ //cette fonction permet de déplacer la balle
 
 // on fait des classes et on déclare les variables dedans pour ensuite les utiliser dans les bouces if
 
+
+
 window.addEventListener("keydown", function (event) {
     if (event.defaultPrevented) { return}
     if(event.key === "a"){
-      raquetteD.monte();
-    }
-    if(event.key === "q"){
-      raquetteD.descend();
-    }
-    if(event.key === "p"){
       raquetteG.monte();
     }
-    if(event.key === "m"){
+    if(event.key === "q"){
       raquetteG.descend();
+    }
+    if(event.key === "p"){
+      raquetteD.monte();
+    }
+    if(event.key === "m"){
+      raquetteD.descend();
     }
     event.preventDefault();
   }, true);
@@ -37,16 +40,17 @@ window.addEventListener("keydown", function (event) {
   window.addEventListener("keyup", function (event) {
     if (event.defaultPrevented) { return}
     if(event.key === "a"){
-      raquetteD.stop();
+      raquetteG.stop();
     }
     if(event.key === "q"){
-      raquetteD.stop();
+      raquetteG.stop();
     }
     if(event.key === "p"){
-      raquetteG.stop();
+      raquetteD.stop();
     }
     if(event.key === "m"){
-      raquetteG.stop();
+      raquetteD.stop();
     }
     event.preventDefault();
   }, true);
+  
