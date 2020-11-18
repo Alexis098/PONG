@@ -8,10 +8,77 @@ class Balle{ //Une classe sert seulement pour y répertorier des variables
         this.largeur=$('#balle').width(); //on fait appel à la valeur width de l'id balle du css pour l'intégrer dans le fichier js
         this.hauteur=$("#balle").height();
     }
-    majHTML(){ // la fonction "mise à jour html"
-        this.$html.css("left",balle.gauche);
-        this.$html.css("top",balle.haut);
+
+    get bas() {
+        return this.haut+this.hauteur;
     }
+
+    set bas(value) {
+        this.haut = value - this.hauteur;
+    }
+    
+    get droite() {
+        return this.gauche+this.largeur;
+    }
+
+    set droite(value) {
+        this.largeur = value - this.largeur;
+    }
+
+    majHTML(){ // la fonction "mise à jour html"
+    this.$html.css("left",balle.gauche);
+    this.$html.css("top",balle.haut);
+    }
+
+    bouge(){
+        //la balle bouge
+        this.gauche=this.gauche+this.vitesseX;
+        this.haut=this.haut+this.vitesseY;
+
+        //les limites de mouvements faisant rebondir la balle
+        this.majHTML();
+
+        if(this.bas>terrain.hauteur){
+            this.bas=terrain.hauteur;
+            this.vitesseY=this.vitesseY*-1;
+        }
+        // la balle rebondit lorsqu'elle touche le haut du terrain
+        if(this.haut<0){
+            this.haut=0;
+            this.vitesseY=this.vitesseY*-1;
+        }
+        if (this.droite>terrain.largeur){
+            this.vitesseX=this.vitesseX*-1;
+        }
+        if(this.gauche<0){
+            this.gauche=0;
+            this.vitesseX=this.vitesseX*-1;
+        }
+
+        if(this.gauche<raquetteD.droite){
+            this.vitesseX=this.vitesseX*-1;
+        }
+
+
+        //rebonds sur les raquettes
+        if(this.droite<raquetteD.gauche){
+            if(this.bas<aquetteD.bas){
+                if (this.haut>raquetteD.haut){
+                    this.vitesseX=this.vitesseX*-1;
+                }
+            }
+            
+        }
+        if(this.gauche<raquetteG.droite){
+            if(this.bas<raquetteG.bas){
+                if (this.haut>raquetteG.haut){
+                    this.vitesseX=this.vitesseX*-1;
+                }
+            }
+            
+        }
+
+    }  
 }
 
 // déclaration de la variable js balle qui reprend les valeurs de la classe Balle qui reprend des valeurs css de l'id balle

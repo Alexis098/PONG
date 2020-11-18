@@ -6,10 +6,26 @@ class Raquette{ //dans les classes, on ne fait que déclarer des variables, pour
         this.hauteur=parseInt($("#raquetteD").css("height"));
         this.haut=parseInt($("#raquetteD").css("top"));
         this.vitesse=1.5;
-        this.direction=1;
+        this.direction=0;
         //this.bas=this.haut+this.hauteur; -> il faut le faire dans une fonction get car il s'agit d'un calcul
     }
 
+    get bas(){ //le résultat d'un calcul; get = obtenir et set = définir
+        return this.haut+this.hauteur;
+    }
+
+    set bas(value) {
+        this.haut = value - this.hauteur;
+    }
+
+    get droite() {
+        return this.gauche+this.largeur;
+    }
+
+    set droite(value) {
+        this.largeur = value - this.largeur;
+    }
+    
     monte(){
         this.direction=-1;
     }
@@ -18,20 +34,30 @@ class Raquette{ //dans les classes, on ne fait que déclarer des variables, pour
         this.direction=1;
     }
 
-    bouge(){
-        this.bas=this.bas+this.vitesse*this.direction;
-        this.majHTML(); //importer la valeur dans cette fonction 
+    stop(){
+        this.direction=0;
     }
-
-
-    get bas(){ //le résultat d'un calcul; get = obtenir et set = définir
-        return this.haut+this.hauteur;
-    }
+    
 
     majHTML(){
         this.$html.css("top",raquetteG.haut);
         this.$html.css("top",raquetteD.haut);
+    }  
+
+    bouge(){
+        this.haut=this.haut+this.vitesse*this.direction;
+        this.majHTML(); //importer la valeur dans cette fonction 
+        if (this.haut<0){
+            this.haut=0;
+            this.stop();
+        }
+        if (this.bas>terrain.hauteur){
+            this.bas=terrain.hauteur;
+            this.stop();
+        }
     }
+
+
 }
 
 let raquetteG = new Raquette($("#raquetteG"));
