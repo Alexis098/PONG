@@ -59,18 +59,17 @@ class Balle{ //Une classe sert seulement pour y répertorier des variables
 
 
         //rebonds sur les raquettes
-        if(this.droite<raquetteD.gauche){
-            if(this.bas<raquetteD.bas){
-                if (this.haut>raquetteD.haut){
-                    this.vitesseX=this.vitesseX*-1;
-                }
+        if(this.gauche < raquetteG.droite){
+            if(this.bas > raquetteG.haut){
+              if(this.haut < raquetteG.bas){
+                this.vitesseX = this.vitesseX*-1;
+              }
             }
-            
         }
-        if(this.gauche < raquetteG.droite){ //si la balle dépasse à gauche la raquette gauche
-            if(this.bas > raquetteG.haut){ //et si la balle est plus basse que le haut de la raquette
-              if(this.haut < raquetteG.bas){ // et si la balle est plus haute que le bas de la raquette
-                this.vitesseX=this.vitesseX*-1;
+        if(this.droite > raquetteD.gauche){
+            if(this.bas > raquetteD.haut){
+              if(this.haut < raquetteD.bas){
+                this.vitesseX = this.vitesseX*-1;
               }
             }
         }

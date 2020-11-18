@@ -1,10 +1,13 @@
 class Raquette{ //dans les classes, on ne fait que déclarer des variables, pour faire des actions, il faut utiliser une fonction
     constructor($html){
         this.$html=$html;
-        this.haut=parseInt($("#raquetteG").css("top"));
+        /*this.haut=parseInt($("#raquetteG").css("top"));
         this.hauteur=parseInt($("#raquetteG").css("height"));
         this.hauteur=parseInt($("#raquetteD").css("height"));
-        this.haut=parseInt($("#raquetteD").css("top"));
+        this.haut=parseInt($("#raquetteD").css("top"));*/
+        this.haut = parseInt($html.css("top"));
+        this.largeur = $html.width();
+        this.hauteur = $html.height();
         this.vitesse=1.5;
         this.direction=0;
         //this.bas=this.haut+this.hauteur; -> il faut le faire dans une fonction get car il s'agit d'un calcul
@@ -41,8 +44,9 @@ class Raquette{ //dans les classes, on ne fait que déclarer des variables, pour
     
 
     majHTML(){
-        this.$html.css("top",raquetteG.haut);
-        this.$html.css("top",raquetteD.haut);
+        /*this.$html.css("top",raquetteG.haut);
+        this.$html.css("top",raquetteD.haut);*/
+        this.$html.css("top",this.haut);
     }  
 
     bouge(){
@@ -56,6 +60,7 @@ class Raquette{ //dans les classes, on ne fait que déclarer des variables, pour
             this.bas=terrain.hauteur;
             this.stop();
         }
+        
     }
 
 
