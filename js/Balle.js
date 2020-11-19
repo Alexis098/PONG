@@ -9,6 +9,7 @@ class Balle{ //Une classe sert seulement pour y répertorier des variables
         this.hauteur=$html.height();
     }
 
+    //le résultat d'un calcul; get = obtenir et set = définir
     get bas() {
         return this.haut+this.hauteur;
     }
@@ -25,7 +26,8 @@ class Balle{ //Une classe sert seulement pour y répertorier des variables
         this.largeur = value - this.largeur;
     }
 
-    majHTML(){ // la fonction "mise à jour html"
+    // la fonction "mise à jour html"
+    majHTML(){ 
     this.$html.css("left",balle.gauche);
     this.$html.css("top",balle.haut);
     }

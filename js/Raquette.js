@@ -13,9 +13,10 @@ class Raquette{ //dans les classes, on ne fait que déclarer des variables, pour
         this.direction=0;
         //this.bas=this.haut+this.hauteur; -> il faut le faire dans une fonction get car il s'agit d'un calcul
     }
+    // on fait des classes et on déclare les variables dedans pour ensuite les utiliser dans les bouces if
     
-
-    get bas(){ //le résultat d'un calcul; get = obtenir et set = définir
+    //le résultat d'un calcul; get = obtenir et set = définir
+    get bas(){ 
         return this.haut+this.hauteur;
     }
 
