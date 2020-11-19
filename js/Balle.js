@@ -30,14 +30,12 @@ class Balle{ //Une classe sert seulement pour y répertorier des variables
     this.$html.css("top",balle.haut);
     }
 
-    bouge(){
-        //la balle bouge
-        this.gauche=this.gauche+this.vitesseX;
-        this.haut=this.haut+this.vitesseY;
-
-        //les limites de mouvements faisant rebondir la balle
+    // permet de définir les collisions de la balle avec le terrain et les raquettes 
+    limitmouv(){
+        
         this.majHTML();
 
+        // la balle rebondit lorsqu'elle touche le bas du terrain
         if(this.bas>terrain.hauteur){
             this.bas=terrain.hauteur;
             this.vitesseY=this.vitesseY*-1;
@@ -47,16 +45,15 @@ class Balle{ //Une classe sert seulement pour y répertorier des variables
             this.haut=0;
             this.vitesseY=this.vitesseY*-1;
         }
+        // la balle rebondit lorsqu'elle touche la droite du terrain
         if (this.droite>terrain.largeur){
             this.vitesseX=this.vitesseX*-1;
         }
+        // la balle rebondit lorsqu'elle touche la gauche du terrain
         if(this.gauche<0){
             this.gauche=0;
             this.vitesseX=this.vitesseX*-1;
         }
-
-      
-
 
         //rebonds sur les raquettes
         if(this.gauche < raquetteG.droite){
@@ -74,6 +71,17 @@ class Balle{ //Une classe sert seulement pour y répertorier des variables
             }
         }
 
+    }
+
+    bouge(){
+        //la balle bouge
+        this.gauche=this.gauche+this.vitesseX;
+        this.haut=this.haut+this.vitesseY;
+
+        //les limites de mouvements faisant rebondir la balle
+        this.limitmouv();
+        
+        this.majHTML();
     }  
 }
 
