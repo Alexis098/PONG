@@ -47,12 +47,13 @@ class Balle{ //Une classe sert seulement pour y répertorier des variables
         }
         // la balle rebondit lorsqu'elle touche la droite du terrain
         if (this.droite>terrain.largeur){
-            this.vitesseX=this.vitesseX*-1;
+            this.gauche=terrain.largeur/2;
+            this.haut=terrain.hauteur/2;
         }
         // la balle rebondit lorsqu'elle touche la gauche du terrain
         if(this.gauche<0){
-            this.gauche=0;
-            this.vitesseX=this.vitesseX*-1;
+            this.gauche=terrain.largeur/2;
+            this.haut=terrain.hauteur/2;
         }
 
         //rebonds sur les raquettes
