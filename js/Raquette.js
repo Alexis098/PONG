@@ -6,6 +6,7 @@ class Raquette{ //dans les classes, on ne fait que déclarer des variables, pour
         this.hauteur=parseInt($("#raquetteD").css("height"));
         this.haut=parseInt($("#raquetteD").css("top"));*/
         this.haut = parseInt($html.css("top"));
+        this.gauche = parseInt($html.css("left"));
         this.largeur = $html.width();
         this.hauteur = $html.height();
         this.vitesse=1.5;
@@ -60,7 +61,6 @@ class Raquette{ //dans les classes, on ne fait que déclarer des variables, pour
             this.bas=terrain.hauteur;
             this.stop();
         }
-        
     }
 
 
