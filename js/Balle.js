@@ -7,6 +7,9 @@ class Balle{ //Une classe sert seulement pour y répertorier des variables
         this.vitesseY=Math.random()*2-1;// multiplier par 2 puis soustraire 1 permet d'avoir un intervalle Math.random() compris entre -1 et 1 pour pouvoir aller soit à droite, soit à gauche. Il en va de même pour le haut et le bas
         this.largeur=$html.width(); //on fait appel à la valeur width de l'id balle du css pour l'intégrer dans le fichier js
         this.hauteur=$html.height();
+        this.acceleration=0.5;
+        this.vitesseMaxG=3;
+        this.vitesseMaxD=-3;
     }
 
     //le résultat d'un calcul; get = obtenir et set = définir
@@ -24,6 +27,22 @@ class Balle{ //Une classe sert seulement pour y répertorier des variables
 
     set droite(value) {
         this.largeur = value - this.largeur;
+    }
+
+    get vitprogD(){
+        return this.vitesseX+this.acceleration;
+    }
+
+    set vitprogD(value){
+        this.acceleration = value - this.acceleration;
+    }
+    // Cf schéma de mon carnet de notes pour explication du - acceleration au lieu du + acceleration pour la raquette gauche
+    get vitprogG(){
+        return this.vitesseX-this.acceleration;
+    }
+
+    set vitprogG(value){ 
+        this.acceleration = value - this.acceleration;
     }
 
     // la fonction "mise à jour html"
@@ -62,17 +81,33 @@ class Balle{ //Une classe sert seulement pour y répertorier des variables
         if(this.gauche < raquetteG.droite){
             if(this.bas > raquetteG.haut){
               if(this.haut < raquetteG.bas){
-                this.vitesseX = this.vitesseX*-1;
+                  if(this.vitesseX<0){
+                    this.vitesseX = this.vitprogG*-1;
+                    console.log(this.vitesseX);
+                    if(this.vitesseX>2){
+                        this.vitesseX=this.vitesseMaxG;
+                    }
+                  }
               }
             }
         }
         if(this.droite > raquetteD.gauche){
             if(this.bas > raquetteD.haut){
               if(this.haut < raquetteD.bas){
-                this.vitesseX = this.vitesseX*-1;
+                if(this.vitesseX>0){
+                    this.vitesseX = this.vitprogD*-1;
+                    console.log(this.vitesseX);
+                    if(this.vitesseX<-2){
+                        this.vitesseX=this.vitesseMaxD;
+                    }
+                }
               }
             }
         }
+        
+            
+        
+        
 
     }
 
