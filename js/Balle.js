@@ -1,8 +1,8 @@
 class Balle{ //Une classe sert seulement pour y répertorier des variables
     constructor($html){
         this.$html=$html;
-        this.haut=parseInt($html.css("top")); //déclaration de variables uniquement pour cette classe
-        this.gauche=parseInt($html.css("left")); // this permet de déclarer une variable dans une classe et let permet de déclarer des variables en dehors des classes
+        this.haut=parseInt($html.css("top"));//déclaration de variables uniquement pour cette classe
+        this.gauche=parseInt($html.css("left"));// this permet de déclarer une variable dans une classe et let permet de déclarer des variables en dehors des classes
         this.vitesseX=Math.random()*2-1;//la balle peut aller dans toutes les directions de façon aléatoire
         this.vitesseY=Math.random()*2-1;// multiplier par 2 puis soustraire 1 permet d'avoir un intervalle Math.random() compris entre -1 et 1 pour pouvoir aller soit à droite, soit à gauche. Il en va de même pour le haut et le bas
         this.largeur=$html.width(); //on fait appel à la valeur width de l'id balle du css pour l'intégrer dans le fichier js
@@ -10,6 +10,7 @@ class Balle{ //Une classe sert seulement pour y répertorier des variables
         this.acceleration=0.5;
         this.vitesseMaxG=3;
         this.vitesseMaxD=-3;
+        
     }
 
     //le résultat d'un calcul; get = obtenir et set = définir
@@ -68,11 +69,13 @@ class Balle{ //Une classe sert seulement pour y répertorier des variables
         }
         // la balle revient au centre lorsqu'elle touche la droite du terrain
         if (this.droite>terrain.largeur){
+            raquetteG.gagne();
             this.gauche=terrain.largeur/2;
             this.haut=terrain.hauteur/2;
         }
         // la balle revient au centre lorsqu'elle touche la gauche du terrain
         if(this.gauche<0){
+            raquetteD.gagne();
             this.gauche=terrain.largeur/2;
             this.haut=terrain.hauteur/2;
         }
@@ -104,12 +107,11 @@ class Balle{ //Une classe sert seulement pour y répertorier des variables
               }
             }
         }
-        
-            
+    }   
         
         
 
-    }
+    
 
     bouge(){
         //la balle bouge
@@ -120,6 +122,7 @@ class Balle{ //Une classe sert seulement pour y répertorier des variables
         this.limitmouv();
         
         this.majHTML();
+        /*this.gagne();*/
     }  
 }
 

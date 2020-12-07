@@ -7,14 +7,24 @@
 
 // Jquerry perme de faire le lien entre html/css et le fichier js 
 
+let demarrer = false;
 
 //cette fonction permet de déplacer la balle et les raquettes en récupérant les fonctions bouge dans les fichiers js correspondant
 setInterval(function(){  
-  balle.bouge();
-  raquetteG.bouge();
-  raquetteD.bouge(); 
+  if(demarrer){
+    balle.bouge();
+    raquetteG.bouge();
+    raquetteD.bouge(); 
+  }
+ 
   
 }, 10);
+
+$("#btn-jouer").on("mouseup", function (event) {
+  event.preventDefault();
+  demarrer=true;
+  $("#ecran-debut").addClass("invisible");
+});
 
 //fonction permettant "d'écouter" les touches "a, q, p et m" du clavier lorsqu'elles sont pressées
 window.addEventListener("keydown", function (event) {

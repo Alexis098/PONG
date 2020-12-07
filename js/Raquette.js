@@ -11,6 +11,8 @@ class Raquette{ //dans les classes, on ne fait que déclarer des variables, pour
         this.hauteur = $html.height();
         this.vitesse=1.5;
         this.direction=0;
+        this.score=0;
+        this.$score = $score;
         //this.bas=this.haut+this.hauteur; -> il faut le faire dans une fonction get car il s'agit d'un calcul
     }
     // on fait des classes et on déclare les variables dedans pour ensuite les utiliser dans les bouces if
@@ -32,6 +34,11 @@ class Raquette{ //dans les classes, on ne fait que déclarer des variables, pour
         this.largeur = value - this.largeur;
     }
     
+    gagne(){
+        this.score = this.score + 1;
+        this.$score.text(this.score);
+    }
+
     monte(){
         this.direction=-1;
     }
@@ -67,5 +74,5 @@ class Raquette{ //dans les classes, on ne fait que déclarer des variables, pour
 
 }
 
-let raquetteG = new Raquette($("#raquetteG"));
-let raquetteD = new Raquette($("#raquetteD"));
+let raquetteG = new Raquette($("#raquetteG"),$("#Sgauche"));
+let raquetteD = new Raquette($("#raquetteD"),$("#Sdroite"));

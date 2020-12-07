@@ -7,13 +7,27 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script><!--importe la bibliothèque jQueries-->
     </head>
     <body>
+        <div id="ecran-debut" class="ecran-debut">
+                Joueur 1 <br><br>
+                utilisez les touches <br><br>
+                <span class="touche">A</span> 
+                    et 
+                <span class="touche">Q</span> 
+                Joueur 2 <br><br>
+                utilisez les touches <br>
+                <span class="touche">P</span> 
+                    et 
+                <span class="touche">M</span> 
+            <a href="#" id ="btn-jouer" class="btn">JOUER</a>
+        </div>
         <div id="terrain"> <!--id = identity, permet de faire comme une class css pour une balise-->
             <div id="balle"></div> <!--la div de la balle est dans la div du terrain car elle sera toujours dans le terrain-->
             <div id="raquetteG" class="raquette"></div>
             <div id="raquetteD" class="raquette"></div>
-            <div id="scoreG">0</div>
-            <div id="scoreD">0</div>
+            <div id ="Sgauche" class="score">0</div>
+            <div id="Sdroite"class="score">0</div>
         </div> 
+        
        
         
         <script src="js/Raquette.js"></script>
