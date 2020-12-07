@@ -69,13 +69,13 @@ class Balle{ //Une classe sert seulement pour y répertorier des variables
         }
         // la balle revient au centre lorsqu'elle touche la droite du terrain
         if (this.droite>terrain.largeur){
-            raquetteG.gagne();
+            //raquetteG.gagne();
             this.gauche=terrain.largeur/2;
             this.haut=terrain.hauteur/2;
         }
         // la balle revient au centre lorsqu'elle touche la gauche du terrain
         if(this.gauche<0){
-            raquetteD.gagne();
+            //raquetteD.gagne();
             this.gauche=terrain.largeur/2;
             this.haut=terrain.hauteur/2;
         }
