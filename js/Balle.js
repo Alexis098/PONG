@@ -46,8 +46,8 @@ class Balle{ //Une classe sert seulement pour y répertorier des variables
         this.acceleration = value - this.acceleration;
     }
 
-    // la fonction "mise à jour html"
-    majHTML(){ 
+    // la fonction "mise à jour html" équivaut à l'appel des variables dans les fonctions de python où on rapellait pour chaque fonction les variables dont les fonctions avaient besoin
+    majHTML(){ //ici, on "tire" les valeurs gauche et haut du fichier css 
     this.$html.css("left",balle.gauche);
     this.$html.css("top",balle.haut);
     }
@@ -109,10 +109,6 @@ class Balle{ //Une classe sert seulement pour y répertorier des variables
         }
     }   
         
-        
-
-    
-
     bouge(){
         //la balle bouge
         this.gauche=this.gauche+this.vitesseX;
